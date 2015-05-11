@@ -7,9 +7,7 @@ License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: trunk
 
-Enables Passcard powered blockchain-identity on your site.
-Allows users to use Passcard avatars, add Passcard data
-to themes and tag people with Nametiles.
+Add beautiful profiles & tagging to your site with Nametiles. 
 
 == Description ==
 
