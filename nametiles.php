@@ -3,7 +3,7 @@
 Plugin Name: Nametiles
 Plugin URI: http://wordpress.org/extend/plugins/nametiles/
 Description: Enables <a href="https://nametiles.co">Nametiles</a> & <a href="https://passcard.info">Passcard</a> support for your blog.
-Version: 1.1.1
+Version: 1.2.0
 Author: Larry Salibra
 Author URI: https://www.larrysalibra.com/
 */
@@ -279,13 +279,18 @@ function passcard_cant_be_loaded() {
 }
 
 function nametiles_header() {
-  $nametiles_api_key = get_option('nametiles_api_key');
-  if(!empty($nametiles_api_key)) {
     ?>
     <script type="text/javascript">
+    <?php
+     $nametiles_api_key = get_option('nametiles_api_key');
+      if(!empty($nametiles_api_key)) {
+        ?>
+
     NametilesConfig = {
       apiKey: "<?php echo $nametiles_api_key ?>"
     };
+
+    <?php } ?>
     (function() {
       var nt = document.createElement('script');
       nt.src = 'https://js.nametiles.co/v1/nt.js';
@@ -296,7 +301,6 @@ function nametiles_header() {
     })();
     </script>
     <?php
-  }
 }
 if (!is_admin()) {
   add_action('wp_head', 'nametiles_header');

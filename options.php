@@ -5,23 +5,22 @@
 <?php wp_nonce_field('update-options'); ?>
 <?php settings_fields('nametiles'); ?>
 
-<p><a target="_blank" href="https://nametiles.co">Nametiles</a> let's you tag people with their
+<p><a target="_blank" href="https://nametiles.co">Nametiles</a> lets you tag people with their
   <a href="https://passcard.info" target="_blank">Passcard</a> passname and embed
   beautiful profiles in your blog. Passcard is a blockchain-based (the technology behind Bitcoin), decentralized
 identity system.</p>
 
+<p>Tagging people is easy! Simply write a plus followed by the Passcard passname of
+  the person you want to tag in your blog post or theme.  To tag me, you'd write +larry.</p>
+
 <p><strong>This plugin has 3 features:</strong></p>
 <ol>
+  <li>Tag Passcard users with <a href="https://nametiles.co" target="_blank">Nametiles</a></li>
   <li>Use Passcard avatars as Wordpress avatars</li>
-  <li>Tag Passcard users with <a href="https://nametiles.co" target="_blank">Nametiles</a> (requires API key)</li>
   <li>Add arbitrary Passcard data to your theme.</li>
 </ol>
 
 <table class="form-table">
-  <tr valign="top">
-  <th scope="row">Nametiles API Key (optional)</th>
-  <td><input type="text" name="nametiles_api_key" value="<?php echo get_option('nametiles_api_key'); ?>" /></td>
-  </tr>
 <tr valign="top">
 <th scope="row">Passcard Endpoint (advanced):</th>
 <td><input type="url" name="passcard_endpoint" value="<?php echo get_option('passcard_endpoint'); ?>" required /></td>
@@ -41,6 +40,10 @@ identity system.</p>
 
 </form>
 
+<h3>Nametiles</h3>
+<p>Nametiles lets you tag people on your website by their Passcard much like you
+would on Facebook or Twitter. Your visitors see beautiful hovercards when they mouseover
+the tagged names. <a target="_blank" href="https://nametiles.co">Learn more and see Nametiles in action.</a></p>
 
 <h3>Passcard Avatars</h3>
 <p>Your users can keep their Wordpress avatar in sync with their Passcard
@@ -50,13 +53,6 @@ avatar. Each user can specify their Passcard passname in the "Your Profile" sect
   reflected in your Wordpress installation. This is because changes to an Passcard
   take about 20 minutes to propagate and we also cache Passcard
    avatar URLs locally in Wordpress for an hour to improve performance of your site.</p>
-
-
-<h3>Nametiles</h3>
-<p>Nametiles lets you tag people on your website by their Passcard much like you
-would on Facebook or Twitter. Your visitors see beautiful hovercards when they mouseover
-the tagged names. Learn more and <a target="_blank" href="https://nametiles.co">get your free API key here</a>.</p>
-
 <h3>Adding Passcard Data to Themes</h3>
 <p>You can add Passcard data to your theme so that it is always up to date.</p>
 <pre><code>&lt;?php $person = Passcard(&quot;larry&quot;); // load the Passcard
